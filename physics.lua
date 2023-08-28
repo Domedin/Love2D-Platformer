@@ -9,10 +9,6 @@ function Physics:load()
     world:addCollisionClass('Player')
     world:addCollisionClass('Danger')
 
-    player = world:newRectangleCollider(360, 100, 80, 80, {collision_class = "Player"})
-    player:setFixedRotation(true)
-    player.speed = 360
-
     platform = world:newRectangleCollider(300, 400, 600, 100, {collision_class = "Platform"})
     platform:setType('static')
 
@@ -30,27 +26,27 @@ function Physics:draw()
 end
 
 function Physics:playerMovement(dt)
-    if player.body then
-        local px, py = player:getPosition()
+    if Player.body then
+        local px, py = Player:getPosition()
         if love.keyboard.isDown('d') then
-            player:setX(px + player.speed * dt)
+            Player:setX(px + Player.speed * dt)
         end
 
         if love.keyboard.isDown('a') then
-            player:setX(px - player.speed * dt)
+            Player:setX(px - Player.speed * dt)
         end
 
-        if player:enter('Danger') then
-            player:destroy()
+        if Player:enter('Danger') then
+            Player:destroy()
         end
     end
 end
 
 function love.keypressed(key)
-    if key == 'space' and player.body then
-        local colliders = world:queryRectangleArea(player:getX() - 40, player:getY() + 40, 80, 2, {'Platform'})
+    if key == 'space' and Player.body then
+        local colliders = world:queryRectangleArea(Player:getX() - 40, Player:getY() + 40, 80, 2, {'Platform'})
         if #colliders > 0 then
-            player:applyLinearImpulse(0, -12500)
+            Player:applyLinearImpulse(0, -12500)
         end
     end
 end

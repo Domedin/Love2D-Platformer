@@ -1,9 +1,11 @@
 require("physics")
 require("playerAnim")
+require("player")
 
 function love.load()
     Physics:load()
     Animation:load()
+    Player:load()
 end
 
 function love.update(dt)
