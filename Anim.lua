@@ -14,11 +14,19 @@ function Animation:load()
 end
 
 function Animation:update(dt)
+    if Player.isMoving then
+        Player.animation = Animation.run
+    else
+        Player.animation = Animation.idle
+    end
+
     Player.animation:update(dt)
 end
 
 function Animation:draw()
-    local px, py = Player:getPosition()
+    if Player.body then
+        local px, py = Player:getPosition()
 
-    Player.animation:draw(Sprites.playerSheet, px, py, nil, 0.7, nil, 40, 38)
+        Player.animation:draw(Sprites.playerSheet, px, py, nil, 0.7 * Player.direction, 0.7, 40, 50)
+    end
 end

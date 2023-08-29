@@ -1,5 +1,5 @@
 require("physics")
-require("playerAnim")
+require("Anim")
 require("player")
 
 function love.load()
