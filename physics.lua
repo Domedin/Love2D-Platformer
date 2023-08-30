@@ -27,6 +27,14 @@ end
 
 function Physics:playerMovement(dt)
     if Player.body then
+
+        colliders = world:queryRectangleArea(Player:getX() - 40, Player:getY() + 30, 80, 2, {'Platform'})
+        if #colliders > 0 then
+            Player.grounded = true
+        else
+            Player.grounded = false
+        end
+
         Player.isMoving = false
         local px, py = Player:getPosition()
         if love.keyboard.isDown('d') then

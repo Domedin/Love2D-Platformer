@@ -7,21 +7,18 @@ function Player:load()
     Player.animation = Animation.idle
     Player.isMoving = false
     Player.direction = 1
+    Player.grounded = true
 end
 
 function Player:update(dt)
-    
-end
-
-function Player:draw()
-
+    print('running')
 end
 
 function love.keypressed(key)
     if key == 'space' and Player.body then
-        local colliders = world:queryRectangleArea(Player:getX() - 40, Player:getY() + 30, 80, 2, {'Platform'})
-        if #colliders > 0 then
+        if Player.grounded then
             Player:applyLinearImpulse(0, -5000)
+            Player.animation = Animation.jump
         end
     end
 end

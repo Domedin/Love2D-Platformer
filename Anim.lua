@@ -14,13 +14,20 @@ function Animation:load()
 end
 
 function Animation:update(dt)
-    if Player.isMoving then
-        Player.animation = Animation.run
-    else
-        Player.animation = Animation.idle
-    end
-
+    Animation:ChangeAnim()
     Player.animation:update(dt)
+end
+
+function Animation:ChangeAnim()
+    if Player.grounded then
+        if Player.isMoving then
+            Player.animation = Animation.run
+        else
+            Player.animation = Animation.idle
+        end
+    else
+        Player.animation = Animation.jump
+    end
 end
 
 function Animation:draw()
