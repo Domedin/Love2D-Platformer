@@ -15,25 +15,25 @@ end
 
 function Animation:update(dt)
     Animation:ChangeAnim()
-    Player.animation:update(dt)
+    player.animation:update(dt)
 end
 
 function Animation:ChangeAnim()
-    if Player.grounded then
-        if Player.isMoving then
-            Player.animation = Animation.run
+    if player.grounded then
+        if player.isMoving then
+            player.animation = Animation.run
         else
-            Player.animation = Animation.idle
+            player.animation = Animation.idle
         end
     else
-        Player.animation = Animation.jump
+        player.animation = Animation.jump
     end
 end
 
 function Animation:draw()
-    if Player.body then
-        local px, py = Player:getPosition()
+    if player.body then
+        local px, py = player:getPosition()
 
-        Player.animation:draw(Sprites.playerSheet, px, py, nil, 0.7 * Player.direction, 0.7, 40, 50)
+        player.animation:draw(Sprites.playerSheet, px, py, nil, 0.7 * player.direction, 0.7, 40, 50)
     end
 end

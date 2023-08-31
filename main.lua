@@ -11,7 +11,7 @@ end
 function love.update(dt)
     Physics:update(dt)
     Animation:update(dt)
-    Player:update(dt)
+    Player:Update(dt)
 end
 
 function love.draw()
