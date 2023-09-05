@@ -5,12 +5,16 @@ function Animation:load()
 
     Sprites = {}
     Sprites.playerSheet = love.graphics.newImage('sprites/PlayerAnimations.png')
+    Sprites.enemySheet = love.graphics.newImage('sprites/EnemyAnimation.png')
 
-    local grid = anim8.newGrid(110, 100, Sprites.playerSheet:getWidth(), Sprites.playerSheet:getHeight())
+    local playerGrid = anim8.newGrid(110, 100, Sprites.playerSheet:getWidth(), Sprites.playerSheet:getHeight())
+    local enemyGrid = anim8.newGrid(110, 100, Sprites.enemySheet:getWidth(), Sprites.enemySheet:getHeight())
 
-    Animation.idle = anim8.newAnimation(grid('1-6', 1), 0.1)
-    Animation.run = anim8.newAnimation(grid('1-6', 2), 0.1)
-    Animation.jump = anim8.newAnimation(grid('1-6', 3), 0.1)
+    Animation.idle = anim8.newAnimation(playerGrid('1-6', 1), 0.1)
+    Animation.run = anim8.newAnimation(playerGrid('1-6', 2), 0.1)
+    Animation.jump = anim8.newAnimation(playerGrid('1-6', 3), 0.1)
+
+    Animation.enemy = anim8.newAnimation(enemyGrid('1-6', 1), 0.1)
 end
 
 function Animation:update(dt)

@@ -47,7 +47,7 @@ end
 function love.keypressed(key)
     if key == 'space' and player.body then
         if player.grounded then
-            player:applyLinearImpulse(0, -5000)
+            player:applyLinearImpulse(0, -5500)
             player.animation = Animation.jump
         end
     end
