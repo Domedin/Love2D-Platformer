@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< Updated upstream
 <map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="40" height="11" tilewidth="70" tileheight="70" infinite="0" nextlayerid="4" nextobjectid="13">
+=======
+<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="40" height="11" tilewidth="70" tileheight="70" infinite="0" nextlayerid="6" nextobjectid="16">
+>>>>>>> Stashed changes
  <editorsettings>
   <export target="levelOne.lua" format="lua"/>
  </editorsettings>
@@ -33,4 +37,10 @@
  <objectgroup id="3" name="Enemies">
   <object id="9" x="1960" y="350" width="70" height="70"/>
  </objectgroup>
+<<<<<<< Updated upstream
+=======
+ <objectgroup id="5" name="Flag" locked="1">
+  <object id="14" x="2590" y="490" width="70" height="70"/>
+ </objectgroup>
+>>>>>>> Stashed changes
 </map>

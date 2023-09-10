@@ -4,6 +4,7 @@ require("player")
 require("tilemap")
 require("camera")
 require("enemy")
+require("sound")
 
 function love.load()
     Physics:load()
@@ -25,8 +26,8 @@ end
 function love.draw()
     cam:attach()
         TileMap:draw()
-        Physics:draw()
         Animation:draw()
+        Physics:draw()
         Enemies:draw()
     cam:detach()
 end

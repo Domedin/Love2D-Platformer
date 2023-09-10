@@ -1,7 +1,7 @@
 Player = {}
 
 function Player:load()
-    player = world:newRectangleCollider(360, 100, 40, 60, {collision_class = "Player"})
+    player = world:newRectangleCollider(360, 100, 40, 55, {collision_class = "Player"})
     player:setFixedRotation(true)
     player.speed = 360
     player.animation = Animation.idle
@@ -17,7 +17,7 @@ end
 function Player:playerMovement(dt)
     if player.body then
 
-        colliders = world:queryRectangleArea(player:getX() - 40, player:getY() + 30, 80, 2, {'Platform'})
+        colliders = world:queryRectangleArea(player:getX() - 40, player:getY() + 25, 80, 8, {'Platform'})
         if #colliders > 0 then
             player.grounded = true
         else

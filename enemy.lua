@@ -1,7 +1,7 @@
 Enemies = {}
 
 function Enemies:spawnEnemy(x, y)
-    local enemy = world:newRectangleCollider(x, y, 40, 60, {collision_class = "Danger"})
+    local enemy = world:newRectangleCollider(x, y, 40, 55, {collision_class = "Danger"})
     enemy.direction = 1
     enemy.speed = 200
     enemy.animation = Animation.enemy
