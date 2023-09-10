@@ -4,9 +4,6 @@ function TileMap:load()
     sti = require 'libraries/Simple-Tiled-Implementation/sti'
     require('libraries/show')
     platforms = {}
-<<<<<<< Updated upstream
-    TileMap:loadMap()
-=======
 
     saveData = {}
     saveData.currentLevel = "levelOne"
@@ -15,43 +12,36 @@ function TileMap:load()
         local data = love.filesystem.load("data.lua")
         data()
     end
-
     TileMap:loadMap(saveData.currentLevel)
->>>>>>> Stashed changes
 end
 
 function TileMap:update(dt)
     gameMap:update(dt)
+    TileMap:CheckLevelCompletion()
 end
 
 function TileMap:draw()
     gameMap:drawLayer(gameMap.layers["Tile Layer 1"])
 end
 
-<<<<<<< Updated upstream
-function TileMap:loadMap()
-    gameMap = sti("maps/levelOne.lua")
-=======
 function TileMap:loadMap(mapName)
     saveData.currentLevel = mapName
     love.filesystem.write("data.lua", table.show(saveData, "saveData"))
     TileMap:destroyAll()
     player:setPosition(300, 100)
     gameMap = sti("maps/" .. mapName .. ".lua")
->>>>>>> Stashed changes
 
     for i, obj in pairs(gameMap.layers["Platforms"].objects) do
         TileMap:spawnPlatform(obj.x, obj.y, obj.width, obj.height)
     end
-
     for i, obj in pairs(gameMap.layers["Enemies"].objects) do
         Enemies:spawnEnemy(obj.x, obj.y)
     end
-<<<<<<< Updated upstream
-=======
     for i, obj in pairs(gameMap.layers["Flag"].objects) do
         FlagX = obj.x
         FlagY = obj.y
+        print(FlagX)
+        print(FlagY)
     end
 end
 
@@ -86,7 +76,6 @@ function TileMap:destroyAll()
         table.remove(Enemies, i)
         i = i - 1
     end
->>>>>>> Stashed changes
 end
 
 function TileMap:spawnPlatform(x, y, width, height)

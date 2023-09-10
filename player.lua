@@ -49,6 +49,7 @@ function love.keypressed(key)
         if player.grounded then
             player:applyLinearImpulse(0, -5500)
             player.animation = Animation.jump
+            Sound.jump:play()
         end
     end
 end

@@ -12,6 +12,7 @@ function love.load()
     Player:load()
     TileMap:load()
     Camera:load()
+    Sound:load()
 end
 
 function love.update(dt)

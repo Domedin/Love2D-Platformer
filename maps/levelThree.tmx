@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="40" height="11" tilewidth="70" tileheight="70" infinite="0" nextlayerid="6" nextobjectid="29">
  <editorsettings>
-  <export format="lua"/>
+  <export target="levelThree.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" name="SteelPlatforms" tilewidth="70" tileheight="70" tilecount="49" columns="7">
   <image source="Tileset.png" width="490" height="490"/>

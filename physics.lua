@@ -3,7 +3,7 @@ Physics = {}
 function Physics:load()
     wf = require 'libraries/windfield/windfield'
     world = wf.newWorld(0, 4000, false)
-    world:setQueryDebugDrawing(false)
+    world:setQueryDebugDrawing(true)
 
     world:addCollisionClass('Platform')
     world:addCollisionClass('Player')
@@ -18,6 +18,6 @@ function Physics:update(dt)
 end
 
 function Physics:draw()
-    --world:draw()
+    world:draw()
 end
 
