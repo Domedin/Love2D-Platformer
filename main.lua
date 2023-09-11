@@ -25,10 +25,10 @@ function love.update(dt)
 end
 
 function love.draw()
+    love.graphics.draw(Sprites.background, 0, 0)
     cam:attach()
         TileMap:draw()
         Animation:draw()
-        Physics:draw()
         Enemies:draw()
     cam:detach()
 end

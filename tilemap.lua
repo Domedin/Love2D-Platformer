@@ -28,7 +28,7 @@ function TileMap:loadMap(mapName)
     saveData.currentLevel = mapName
     love.filesystem.write("data.lua", table.show(saveData, "saveData"))
     TileMap:destroyAll()
-    player:setPosition(300, 100)
+    player:setPosition(Player.startX, Player.startY)
     gameMap = sti("maps/" .. mapName .. ".lua")
 
     for i, obj in pairs(gameMap.layers["Platforms"].objects) do

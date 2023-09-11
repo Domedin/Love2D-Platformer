@@ -1,7 +1,9 @@
 Player = {}
 
 function Player:load()
-    player = world:newRectangleCollider(360, 100, 40, 55, {collision_class = "Player"})
+    Player.startX = 360
+    Player.startY = 100
+    player = world:newRectangleCollider(Player.startX, Player.startY, 40, 55, {collision_class = "Player"})
     player:setFixedRotation(true)
     player.speed = 360
     player.animation = Animation.idle
@@ -39,7 +41,7 @@ function Player:playerMovement(dt)
         end
 
         if player:enter('Danger') then
-            player:destroy()
+            player:setPosition(Player.startX, Player.startY)
         end
     end
 end
