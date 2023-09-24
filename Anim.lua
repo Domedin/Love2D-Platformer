@@ -6,7 +6,7 @@ function Animation:load()
     Sprites = {}
     Sprites.playerSheet = love.graphics.newImage('sprites/PlayerAnimations.png')
     Sprites.enemySheet = love.graphics.newImage('sprites/EnemyAnimation.png')
-    Sprites.background = love.graphics.newImage('sprites/background.png')
+    Sprites.background = love.graphics.newImage('sprites/Background.png')
 
     local playerGrid = anim8.newGrid(110, 100, Sprites.playerSheet:getWidth(), Sprites.playerSheet:getHeight())
     local enemyGrid = anim8.newGrid(110, 100, Sprites.enemySheet:getWidth(), Sprites.enemySheet:getHeight())
